@@ -1,4 +1,4 @@
-package com.swiftmind.toggle;
+package com.swiftmind.toggl;
 
 import java.net.URL;
 
@@ -13,19 +13,19 @@ import javafx.stage.Stage;
  * 
  * @author Odilo Oehmichen, <a href="http://www.swiftmind.com">Swiftmind GmbH</a>
  */
-public class ToggleMain extends Application {
+public class TogglMain extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
 		URL url = getClass().getResource("view.fxml");
 		Parent root = FXMLLoader.load(url);
 		
-		stage.setTitle("Toggle");
+		stage.setTitle("Toggl");
 		stage.setScene(new Scene(root, 560, 380));
 		stage.show();
 	}
 
 	public static void main(String[] args) {
-		ToggleMain.launch(args);
+		TogglMain.launch(args);
 	}
 }

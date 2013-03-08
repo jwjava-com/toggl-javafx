@@ -1,4 +1,4 @@
-package com.swiftmind.toggle.service;
+package com.swiftmind.toggl.service;
 
 import java.io.IOException;
 import java.io.StringWriter;
@@ -23,10 +23,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
-import com.swiftmind.toggle.domain.JsonRequest;
-import com.swiftmind.toggle.domain.JsonResponse;
-import com.swiftmind.toggle.domain.Project;
-import com.swiftmind.toggle.domain.TimeEntry;
+import com.swiftmind.toggl.domain.JsonRequest;
+import com.swiftmind.toggl.domain.JsonResponse;
+import com.swiftmind.toggl.domain.Project;
+import com.swiftmind.toggl.domain.TimeEntry;
 
 /**
  * Implementation of the {@link ToggleService} using Spring's RestTemplate.

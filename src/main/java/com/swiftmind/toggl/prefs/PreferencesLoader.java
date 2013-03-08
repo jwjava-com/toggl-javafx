@@ -1,4 +1,4 @@
-package com.swiftmind.toggle.prefs;
+package com.swiftmind.toggl.prefs;
 
 import java.io.StringWriter;
 import java.util.List;
@@ -10,7 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
 
-import com.swiftmind.toggle.domain.Project;
+import com.swiftmind.toggl.domain.Project;
 
 /**
  * Loads and stores some program preferences.

@@ -1,4 +1,4 @@
-package com.swiftmind.toggle.jackson;
+package com.swiftmind.toggl.jackson;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import org.codehaus.jackson.map.SerializerProvider;
 import org.joda.time.DateTime;
 
 /**
- * TODO(OOE) add some comments
+ * Implementation of a {@link JsonSerializer} to deal with Joda's {@link DateTime} objects.
  *
  * @author Odilo Oehmichen, <a href="http://www.swiftmind.com">Swiftmind GmbH</a>
  */

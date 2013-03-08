@@ -1,11 +1,13 @@
-package com.swiftmind.toggle.controller;
+package com.swiftmind.toggl.controller;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
 import java.util.TreeSet;
@@ -17,17 +19,19 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.util.StringConverter;
 
 import org.joda.time.Duration;
 import org.joda.time.LocalDate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
+import org.springframework.web.client.RestClientException;
 
-import com.swiftmind.toggle.domain.Project;
-import com.swiftmind.toggle.prefs.PreferencesLoader;
-import com.swiftmind.toggle.service.RestTemplateToggleService;
-import com.swiftmind.toggle.service.ToggleService;
+import com.swiftmind.toggl.domain.Project;
+import com.swiftmind.toggl.prefs.PreferencesLoader;
+import com.swiftmind.toggl.service.RestTemplateToggleService;
+import com.swiftmind.toggl.service.ToggleService;
 
 /**
  * Controller handling the UI events and initialization.
@@ -71,10 +75,15 @@ public class FxmlController implements Initializable {
 	private void init() {
 		appendMessage("Intializing...");
 		if(StringUtils.hasText(apiToken)) {
-			apiTokenTextfield.setText(apiToken);
-			service = new RestTemplateToggleService(apiToken);
-			readProjectsFromToggle();
-			appendMessage("...finished");
+			try {
+				appendMessage("...using token ", apiToken);
+				apiTokenTextfield.setText(apiToken);
+				service = new RestTemplateToggleService(apiToken);
+				readProjectsFromToggle();
+				appendMessage("...finished");
+			} catch(RestClientException rce) {
+				appendMessage("Error while reading all projects: ", rce.getMessage());
+			}
 		} else {
 			appendMessage("...please enter your Toggle API_TOKEN");
 		}
@@ -149,7 +158,7 @@ public class FxmlController implements Initializable {
 		return Duration.standardHours(8).plus(Duration.standardMinutes(40));
 	}
 
-	private void loadProjectsFromFile() {
+	void loadProjectsFromFile() {
 		setProjects(prefLoader.loadProjectsFromFile());
 	}
 
@@ -171,5 +180,23 @@ public class FxmlController implements Initializable {
 		projects.addAll(newProjects);
 		
 		projectsCombobox.getItems().setAll(projects);
+		
+		StringConverter<Project> converter = new StringConverter<Project>() {
+
+			private Map<String, Project> projekte = new HashMap<String, Project>();
+
+			@Override
+			public String toString(Project project) {
+				projekte.put(project.getClientProjectName(), project);
+			    return project.getClientProjectName();
+			}
+
+			@Override
+			public Project fromString(String projectname) {
+			    return projekte.get(projectname);
+			}
+		};
+		projectsCombobox.setConverter(converter);
+		
 	}
 }

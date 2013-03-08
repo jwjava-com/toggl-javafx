@@ -1,19 +1,16 @@
-package com.swiftmind.toggle.domain;
+package com.swiftmind.toggl.domain;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 
 /**
+ * Wrapping a JsonRequest for a new "time_entry".
  * 
- * TODO(OOE) add some comments
- *
  * @author Odilo Oehmichen, <a href="http://www.swiftmind.com">Swiftmind GmbH</a>
  */
 public class JsonRequest {
 
 	@JsonProperty("time_entry")
 	private TimeEntry timeEntry;
-
-	
 	
 	public JsonRequest(TimeEntry timeEntry) {
 		super();

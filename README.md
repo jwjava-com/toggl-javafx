@@ -1,2 +1,2 @@
-toggle-javafx
+toggl-javafx
 =============

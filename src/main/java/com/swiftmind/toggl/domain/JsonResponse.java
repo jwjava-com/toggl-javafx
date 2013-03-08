@@ -1,4 +1,4 @@
-package com.swiftmind.toggle.domain;
+package com.swiftmind.toggl.domain;
 
 import java.io.Serializable;
 
@@ -6,10 +6,9 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonTypeInfo;
 import org.codehaus.jackson.annotate.JsonTypeInfo.As;
 import org.codehaus.jackson.annotate.JsonTypeInfo.Id;
-import org.codehaus.jackson.map.annotate.JsonSerialize;
 
 /**
- * TODO(OOE) add some comments
+ * Wrapping the json-response. The payload is in the {@link #data} property.
  *
  * @author Odilo Oehmichen, <a href="http://www.swiftmind.com">Swiftmind GmbH</a>
  */

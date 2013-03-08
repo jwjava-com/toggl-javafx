@@ -9,7 +9,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="378.0" prefWidth="554.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.swiftmind.toggle.controller.FxmlController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="378.0" prefWidth="554.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.swiftmind.toggl.controller.FxmlController">
   <children>
     <VBox layoutX="42.0" layoutY="57.0" prefHeight="148.0" prefWidth="436.0">
       <children>

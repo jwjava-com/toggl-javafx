@@ -1,21 +1,19 @@
-package com.swiftmind.toggle.domain;
+package com.swiftmind.toggl.domain;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.annotate.JsonTypeName;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.codehaus.jackson.map.annotate.JsonSerialize.Inclusion;
 import org.joda.time.DateTime;
 import org.joda.time.Duration;
 
-import com.swiftmind.toggle.jackson.JodaDateTimeSerializer;
+import com.swiftmind.toggl.jackson.JodaDateTimeSerializer;
 
 /**
- * TODO(OOE) add some comments
+ * Bean holding the information of a toggl time-entry.
  *
  * @author Odilo Oehmichen, <a href="http://www.swiftmind.com">Swiftmind GmbH</a>
  */

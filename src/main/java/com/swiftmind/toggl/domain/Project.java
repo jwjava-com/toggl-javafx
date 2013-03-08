@@ -1,4 +1,4 @@
-package com.swiftmind.toggle.domain;
+package com.swiftmind.toggl.domain;
 
 import java.io.Serializable;
 
@@ -8,7 +8,7 @@ import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.codehaus.jackson.map.annotate.JsonSerialize.Inclusion;
 
 /**
- * TODO(OOE) add some comments
+ * Bean holding toggl-project information.
  *
  * @author Odilo Oehmichen, <a href="http://www.swiftmind.com">Swiftmind GmbH</a>
  */
